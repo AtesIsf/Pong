@@ -19,7 +19,7 @@ class Ball
         void Draw();
         void Update();
 
-        bool HasHitBorders();
+        u_int8_t IsGoal();
 };
 
 Ball::Ball()
@@ -44,11 +44,20 @@ void Ball::Update()
 {
     pos.x+=velocity.x;
     pos.y+=velocity.y;
+
+    // Up-Down border hit
+    if (pos.y+radius >= HEIGHT || pos.y-radius <= 0) 
+        velocity.y *= -1;
 }
 
-bool Ball::HasHitBorders()
+// 0->false, 1->player goal, 2->ai goal
+uint8_t Ball::IsGoal()
 {
-    
+    if (pos.x+radius >= WIDTH) 
+        return 1;
+    if (pos.x-radius <= 0)
+        return 2;
+    return 0;
 }
 
 #endif
