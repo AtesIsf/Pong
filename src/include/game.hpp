@@ -5,7 +5,7 @@
 #include <raymath.h>
 
 #include "ball.hpp"
-#include "puddle.hpp"
+#include "paddle.hpp"
 #include "consts.hpp"
 
 class Game
@@ -14,8 +14,8 @@ class Game
         /* data */
     public:
         Ball *ball;
-        Puddle *player;
-        Puddle *comp;
+        Paddle *player;
+        Paddle *comp;
 
         Game(/* args */);
         ~Game();
@@ -29,8 +29,8 @@ class Game
 Game::Game(/* args */)
 {
     ball = new Ball();
-    player = new Puddle(true);
-    comp = new Puddle(false);
+    player = new Paddle(true);
+    comp = new Paddle(false);
 }
 
 Game::~Game()

@@ -1,11 +1,11 @@
-#ifndef PUDDLE_HPP
-#define PUDDLE_HPP
+#ifndef PADDLE_HPP
+#define PADDLE_HPP
 
 #include <raylib.h>
 
 #include "consts.hpp"
 
-class Puddle
+class Paddle
 {
     private:
         /* data */
@@ -14,13 +14,13 @@ class Puddle
         double speed;
         Vector2 pos;
 
-        Puddle(bool is_player);
-        ~Puddle();
+        Paddle(bool is_player);
+        ~Paddle();
 
         void Draw();
 };
 
-Puddle::Puddle(bool is_player)
+Paddle::Paddle(bool is_player)
 {
     this->is_player = is_player;
     if (is_player)
@@ -30,11 +30,11 @@ Puddle::Puddle(bool is_player)
     pos.y = HEIGHT/2-45;
 }
 
-Puddle::~Puddle()
+Paddle::~Paddle()
 {
 }
 
-void Puddle::Draw()
+void Paddle::Draw()
 {
     DrawRectangleRounded(
         Rectangle{pos.x, pos.y, 18, 90},
