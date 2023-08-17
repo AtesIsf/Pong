@@ -4,6 +4,8 @@
 #include <raylib.h>
 #include <raymath.h>
 
+#include "consts.hpp"
+
 class Ball
 {
     private:
@@ -13,7 +15,7 @@ class Ball
         Vector2 velocity;
         int radius;
 
-        Ball();
+        Ball(int v_x, int v_y);
         ~Ball();
 
         void Draw();
@@ -22,13 +24,13 @@ class Ball
         u_int8_t IsGoal();
 };
 
-Ball::Ball()
+Ball::Ball(int v_x, int v_y)
 {
     radius = 15;
     pos.x = WIDTH/2;
     pos.y = HEIGHT/2;
-    velocity.x = 5;
-    velocity.y = 5;
+    velocity.x = v_x;
+    velocity.y = v_y;
 }
 
 Ball::~Ball()

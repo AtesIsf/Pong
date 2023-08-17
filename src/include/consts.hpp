@@ -8,4 +8,7 @@
 #define GAME_TITLE "Pong"
 #define TARGET_FPS 60
 
+#define PADDLE_HEIGHT 90
+#define PADDLE_WIDTH 18
+
 #endif

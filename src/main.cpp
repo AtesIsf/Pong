@@ -19,18 +19,13 @@ int main()
         // Drawing
         ClearBackground(BLACK);
         DrawLine(WIDTH/2, 0, WIDTH/2, HEIGHT, WHITE);
+        DrawText(TextFormat("%d", (int)(game->scores.x)), WIDTH/2-20, 0, 30, WHITE);
+        DrawText(TextFormat("%d", (int)(game->scores.y)), WIDTH/2+4, 0, 30, WHITE);
+
+        if (game->is_over)
+            DrawText("Game Over!\nPress Space to\nRestart.", WIDTH/4, HEIGHT/4, 40, WHITE);
 
         game->Draw();
-        
-        DrawRectangleRounded(
-            Rectangle{10, HEIGHT/2-45, 18, 90},
-            0.5, 10, WHITE
-        );
-        DrawRectangleRounded(
-            Rectangle{WIDTH-28, HEIGHT/2-45, 18, 90},
-            0.5, 10, WHITE
-        );
-
 
         EndDrawing();
     }
